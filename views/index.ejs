@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>
+    <%= msg %>
+  </p>
+  <form action="/" method="post">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" value="<%= user.username%>" />
+      <%if(error.username){ %>
+        <p>
+          <%= error.username.msg %>
+        </p>
+        <% } %>
+    </div>
+    <br>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password" value="<%= user.password%>" />
+      <%if(error.password){ %>
+        <p>
+          <%= error.password.msg %>
+        </p>
+        <% } %>
+    </div>
+    <br>
+    <div>
+      <label>Confirm Password:</label>
+      <input type="password" name="cpassword" />
+      <%if(error.cpassword){ %>
+        <p>
+          <%= error.cpassword.msg %>
+        </p>
+        <% } %>
+    </div>
+    <br>
+    <div>
+      <input type="submit" value="Log In" />
+    </div>
+  </form>
+</body>
+
+</html>
